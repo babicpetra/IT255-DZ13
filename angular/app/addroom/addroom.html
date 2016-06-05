@@ -1,0 +1,31 @@
+<div class="forma">
+<form role="form" [ngFormModel]="registerForm"  >
+        <div class="vazi">
+            <label  for="roomName" >Room name:</label>
+            <br/>
+            <input type="text"  ngControl='roomName'  >
+        </div>
+        <div class="vazi">
+            <label  for="hasTV" >TV:</label>
+            <br/>
+            <select ng-selected="Yes" class="meni" placeholder="TV" ngControl='hasTV'>
+                <option value="1" >Yes</option>
+                <option value="0" >No</option>
+            </select>
+        </div>
+        <div class="vazi">
+            <label  for="beds" >Number of beds:</label>
+            <br/>
+            <input type="text"  ngControl='beds'  >
+        </div>
+        <div class="vazi">
+            <label  for="kvadratura" >Kvadratura:</label>
+            <br/>
+            <input type="text"  ngControl='kvadratura'  >
+        </div>
+
+        <button (click)="onAddRoom()"  class="btn">Add room</button>
+
+    <br/>
+ </form>
+</div>

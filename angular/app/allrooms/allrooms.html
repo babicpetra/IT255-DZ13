@@ -1,0 +1,60 @@
+
+
+<br/><h3>Rooms</h3><br/> 	<br/>
+
+	<!--
+	<br/><br/>
+<div *ngFor="#room of rooms| SearchPipeKV:kvadratura | SearchPipeBeds:beds">
+	Ime sobe: <strong>{{room.roomname}}</strong>
+	<br/>
+	Beds: <strong>{{room.beds}}</strong>
+	<br/>
+	<span *ngIf="room.tv == '1'">
+		TV: <strong>yes</strong>
+	</span>
+	<span *ngIf="room.tv != '1'">
+		TV:<strong>no</strong>
+	</span><br/>
+	Kvadratura: <strong>{{room.kvadratura}}</strong>
+	<br/><br/>
+</div>
+</div> -->
+
+<div class="col-lg-12">
+	<form class="navbar-form" role="search">
+		<div class="form-group">
+			<input type="text" class="form-control" placeholder="Pretraži po kvadraturi" [(ngModel)]="kvadratura">
+		</div>
+	</form>
+	<form class="navbar-form" role="search">
+		<div class="form-group">
+			<input type="text" class="form-control" placeholder="Pretraži po broju kreveta" [(ngModel)]="beds">
+		</div>
+	</form>
+	<table id="example" class="display" cellspacing="0">
+
+		<thead>
+		<tr>
+			<th>Ime sobe: </th>
+			<th>Beds: </th>
+			<th>TV: </th>
+			<th>Kvadratura: </th>
+		</tr>
+		</thead>
+
+		<tbody>
+		<tr *ngFor="#room of rooms| SearchPipeKV:kvadratura | SearchPipeBeds:beds">
+			<th>{{room.roomname}}</th>
+			<th>{{room.beds}}</th>
+			<th><span *ngIf="room.tv == '1'">
+			Ima
+			</span>
+			<span *ngIf="room.tv != '1'">
+			Nema
+			</span>
+			</th>
+			<th>{{room.kvadratura}}</th>
+		</tr>
+		</tbody>
+	</table>
+</div>
